@@ -27,5 +27,12 @@ def salvarDados(registros):
         print('Não encontrado.')
         return []
 
+def adicionarDado(registro): 
+    try: 
+        with open('dados_usuarios.txt', 'a', encoding='utf-8') as f: 
+            f.write(f'{registro["ID"]},{registro["year"]},{registro["gender"]},{registro["name"]},{registro["number"]}\n')   
 
+    except FileNotFoundError: 
+        print(f'Arquivo não encontrado.')
+    
     
