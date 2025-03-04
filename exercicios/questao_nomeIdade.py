@@ -41,4 +41,14 @@ def retorna_dict(caminho: str) -> dict:
 
     return registro
 
-print(retorna_dict("nome_idade.csv"))
+def retorna_valores(): 
+    registro = retorna_dict("nome_idade.csv")
+    
+    #for i in range(len(registro["Nome"])):
+        #print(f"Nome:{registro['Nome'][i]}, Idade:{registro['Idade'][i]}")
+
+    for nome in registro["Nome"]:
+        print(f"Nome:{nome}")
+retorna_valores()
+
+# registro = {nome:['a','b'], idade:['1','2']}   
