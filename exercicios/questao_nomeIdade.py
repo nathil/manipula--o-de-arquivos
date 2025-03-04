@@ -24,3 +24,21 @@ def retorna_nome_idade():
         
         
 retorna_nome_idade()
+
+def retorna_dict(caminho: str) -> dict:
+    lista_nome = []
+    lista_idade = []
+
+    with open(caminho, "r", encoding="utf-8") as arquivo: 
+        dados = arquivo.readlines()
+    
+    for dado in dados[1:]: 
+        valores = dado.strip().split(",") 
+        lista_nome.append(valores[0])
+        lista_idade.append(valores[1])
+
+    registro = {"Nome": lista_nome, "Idade": lista_idade}
+
+    return registro
+
+print(retorna_dict("nome_idade.csv"))
